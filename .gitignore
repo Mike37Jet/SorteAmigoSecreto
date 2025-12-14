@@ -1,0 +1,27 @@
+# Dependencias
+node_modules/
+sorteo-app/node_modules/
+
+# Build
+dist/
+sorteo-app/dist/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment
+.env
+.env.local
+.env.production
