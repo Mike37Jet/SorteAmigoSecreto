@@ -111,12 +111,7 @@ Recuerda mantener el secreto`;
                   </button>
                 </div>
 
-                {/* Preview del link (truncado) */}
-                <div className="mt-3 p-2 bg-gray-50 rounded-lg">
-                  <p className="text-xs text-gray-500 truncate">
-                    {link}
-                  </p>
-                </div>
+                {/* Link oculto para mantener el secreto */}
               </motion.div>
             );
           })}
