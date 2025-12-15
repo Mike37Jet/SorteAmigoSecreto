@@ -86,15 +86,15 @@ export default function Configuracion({ onSorteoCompleto }) {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-4">
+    <div className="min-h-screen flex items-center justify-center p-2 sm:p-4">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="glass rounded-3xl p-8 max-w-2xl w-full"
+        className="glass rounded-2xl sm:rounded-3xl p-4 sm:p-8 max-w-2xl w-full"
       >
-        <div className="flex items-center justify-center gap-3 mb-2">
-          <Gift size={48} weight="duotone" className="text-emerald-600" />
-          <h1 className="text-4xl font-bold bg-gradient-to-r from-emerald-600 to-blue-600 bg-clip-text text-transparent">
+        <div className="flex items-center justify-center gap-2 sm:gap-3 mb-2">
+          <Gift size={40} weight="duotone" className="text-emerald-600 sm:w-12 sm:h-12" />
+          <h1 className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-emerald-600 to-blue-600 bg-clip-text text-transparent">
             Amigo Secreto
           </h1>
         </div>
@@ -242,7 +242,7 @@ export default function Configuracion({ onSorteoCompleto }) {
         <button
           onClick={ejecutarSorteo}
           disabled={participantes.length < 2 || cargando}
-          className={`w-full py-4 rounded-xl font-bold text-lg transition-all ${
+          className={`w-full py-3 sm:py-4 rounded-xl font-bold text-base sm:text-lg transition-all ${
             participantes.length < 2 || cargando
               ? 'bg-gray-300 text-gray-500 cursor-not-allowed'
               : 'bg-gradient-to-r from-blue-500 to-purple-600 text-white hover:from-blue-600 hover:to-purple-700 shadow-lg hover:shadow-xl transform hover:scale-105'

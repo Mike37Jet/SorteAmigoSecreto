@@ -62,11 +62,11 @@ export default function Revelacion() {
 
   if (error) {
     return (
-      <div className="min-h-screen flex items-center justify-center p-4">
+      <div className="min-h-screen flex items-center justify-center p-2 sm:p-4">
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
-          className="glass rounded-3xl p-8 max-w-md w-full text-center"
+          className="glass rounded-2xl sm:rounded-3xl p-4 sm:p-8 max-w-md w-full text-center">
         >
           <div className="mb-4">
             <SmileyXEyes size={64} weight="duotone" className="text-gray-400 mx-auto" />
@@ -89,7 +89,7 @@ export default function Revelacion() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-4">
+    <div className="min-h-screen flex items-center justify-center p-2 sm:p-4">
       <AnimatePresence mode="wait">
         {!revelado ? (
           // Vista previa - Caja cerrada
@@ -98,7 +98,7 @@ export default function Revelacion() {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.8 }}
-            className="glass rounded-3xl p-8 max-w-md w-full text-center"
+            className="glass rounded-2xl sm:rounded-3xl p-4 sm:p-8 max-w-md w-full text-center"
           >
             <motion.div
               animate={{ 
@@ -144,7 +144,7 @@ export default function Revelacion() {
             initial={{ opacity: 0, scale: 0.5, rotateY: 90 }}
             animate={{ opacity: 1, scale: 1, rotateY: 0 }}
             transition={{ type: "spring", duration: 0.8 }}
-            className="glass rounded-3xl p-8 max-w-md w-full text-center"
+            className="glass rounded-2xl sm:rounded-3xl p-4 sm:p-8 max-w-md w-full text-center"
           >
             <motion.div
               initial={{ scale: 0 }}

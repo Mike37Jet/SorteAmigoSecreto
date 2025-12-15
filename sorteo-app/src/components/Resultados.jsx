@@ -28,11 +28,11 @@ Recuerda mantener el secreto`;
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-4">
+    <div className="min-h-screen flex items-center justify-center p-2 sm:p-4">
       <motion.div
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
-        className="glass rounded-3xl p-8 max-w-3xl w-full"
+        className="glass rounded-2xl sm:rounded-3xl p-4 sm:p-8 max-w-3xl w-full"
       >
         <div className="text-center mb-8">
           <motion.div
@@ -43,7 +43,7 @@ Recuerda mantener el secreto`;
           >
             <Confetti size={64} weight="duotone" className="text-emerald-600" />
           </motion.div>
-          <h1 className="text-4xl font-bold mb-2 bg-gradient-to-r from-emerald-600 to-blue-600 bg-clip-text text-transparent">
+          <h1 className="text-3xl sm:text-4xl font-bold mb-2 bg-gradient-to-r from-emerald-600 to-blue-600 bg-clip-text text-transparent">
             ¡Sorteo Completado!
           </h1>
           <p className="text-gray-600">
@@ -79,10 +79,10 @@ Recuerda mantener el secreto`;
                   </div>
                 </div>
 
-                <div className="flex gap-2">
+                <div className="flex flex-col sm:flex-row gap-2">
                   <button
                     onClick={() => copiarLink(link, asignacion.giverId)}
-                    className={`flex-1 py-3 px-4 rounded-xl font-semibold transition-all flex items-center justify-center gap-2 ${
+                    className={`flex-1 py-2 sm:py-3 px-3 sm:px-4 rounded-xl font-semibold transition-all flex items-center justify-center gap-2 text-sm sm:text-base ${
                       copiado === asignacion.giverId
                         ? 'bg-green-500 text-white'
                         : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
@@ -103,7 +103,7 @@ Recuerda mantener el secreto`;
                   
                   <button
                     onClick={() => compartirWhatsApp(link, asignacion.giverName)}
-                    className="flex-1 py-3 px-4 bg-green-600 text-white rounded-xl font-semibold hover:bg-green-700 transition-all flex items-center justify-center gap-2"
+                    className="flex-1 py-2 sm:py-3 px-3 sm:px-4 bg-green-600 text-white rounded-xl font-semibold hover:bg-green-700 transition-all flex items-center justify-center gap-2 text-sm sm:text-base"
                     title="Nota: El link será clickeable solo en producción, no con localhost"
                   >
                     <WhatsappLogo size={20} weight="fill" />
