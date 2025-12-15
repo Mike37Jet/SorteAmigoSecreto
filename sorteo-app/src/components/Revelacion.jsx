@@ -62,7 +62,7 @@ export default function Revelacion() {
 
   if (error) {
     return (
-      <div className="min-h-screen flex items-center justify-center p-2 sm:p-4">
+      <div className="min-h-screen w-full flex items-center justify-center p-2 sm:p-4 overflow-x-hidden">
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -82,14 +82,14 @@ export default function Revelacion() {
 
   if (!datos) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
+      <div className="min-h-screen w-full flex items-center justify-center overflow-x-hidden">
         <Gift size={64} weight="duotone" className="text-emerald-600 animate-spin" />
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-2 sm:p-4">
+    <div className="min-h-screen w-full flex items-center justify-center p-2 sm:p-4 overflow-x-hidden">
       <AnimatePresence mode="wait">
         {!revelado ? (
           // Vista previa - Caja cerrada

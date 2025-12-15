@@ -86,7 +86,7 @@ export default function Configuracion({ onSorteoCompleto }) {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-2 sm:p-4">
+    <div className="min-h-screen w-full flex items-center justify-center p-2 sm:p-4 overflow-x-hidden">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
