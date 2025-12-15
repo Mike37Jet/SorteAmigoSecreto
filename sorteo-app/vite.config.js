@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [react()],
   base: '/SorteAmigoSecreto/',
   build: {
-    outDir: '../dist',
+    outDir: 'dist',
     emptyOutDir: true,
   }
 })
