@@ -1,11 +1,12 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useSearchParams } from 'react-router-dom';
+import { useSearchParams, useNavigate } from 'react-router-dom';
 import { Gift, Sparkle, Confetti, SmileyXEyes, Lock, X } from '@phosphor-icons/react';
 import { desencriptarAsignacion } from '../utils/crypto';
 import confetti from 'canvas-confetti';
 
 export default function Revelacion() {
+  const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const [revelado, setRevelado] = useState(false);
   const [datos, setDatos] = useState(null);
@@ -191,7 +192,7 @@ export default function Revelacion() {
                 </p>
               </div>
 
-              <button
+              <buttonnavigate('/')
                 onClick={() => window.location.href = '/'}
                 className="w-full py-3 bg-gray-200 text-gray-700 rounded-xl font-semibold hover:bg-gray-300 transition-all flex items-center justify-center gap-2"
               >
