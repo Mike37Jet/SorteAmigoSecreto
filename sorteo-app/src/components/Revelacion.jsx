@@ -192,8 +192,8 @@ export default function Revelacion() {
                 </p>
               </div>
 
-              <buttonnavigate('/')
-                onClick={() => window.location.href = '/'}
+              <button
+                onClick={() => navigate('/')}
                 className="w-full py-3 bg-gray-200 text-gray-700 rounded-xl font-semibold hover:bg-gray-300 transition-all flex items-center justify-center gap-2"
               >
                 <X size={20} weight="bold" />
