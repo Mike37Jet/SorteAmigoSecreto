@@ -66,7 +66,7 @@ export default function Revelacion() {
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
-          className="glass rounded-2xl sm:rounded-3xl p-4 sm:p-8 max-w-md w-full text-center">
+          className="glass rounded-2xl sm:rounded-3xl p-4 sm:p-8 max-w-md w-full text-center"
         >
           <div className="mb-4">
             <SmileyXEyes size={64} weight="duotone" className="text-gray-400 mx-auto" />
