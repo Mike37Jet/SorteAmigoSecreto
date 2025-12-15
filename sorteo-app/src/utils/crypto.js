@@ -42,20 +42,18 @@ export function desencriptarAsignacion(token) {
 /**
  * Genera el link completo para un participante
  */
-export function generarLink(giverName, receiverName, baseUrl = null) {
+export function generarLink(giverName, receiverName) {
   const token = encryptarAsignacion(giverName, receiverName);
   
-  // Si no se proporciona baseUrl, construir desde window.location
-  if (!baseUrl) {
-    // En producción, incluye el base path del vite.config.js
-    const origin = window.location.origin;
-    const pathname = window.location.pathname;
-    // Extraer el base path (todo antes del hash)
-    const basePath = pathname.split('#')[0];
-    baseUrl = `${origin}${basePath}`;
-    // Remover trailing slash si existe
-    baseUrl = baseUrl.replace(/\/$/, '');
-  }
+  // Obtener la URL base completa incluyendo el path de GitHub Pages
+  const origin = window.location.origin;
+  const pathname = window.location.pathname;
   
-  return `${baseUrl}#/reveal?q=${token}`;
+  // Obtener el base path (todo antes del #, sin trailing slash)
+  let basePath = pathname.split('#')[0].replace(/\/$/, '');
+  
+  // Si estamos en localhost, el basePath será vacío, así que usamos el origin directamente
+  const baseUrl = basePath ? `${origin}${basePath}` : origin;
+  
+  return `${baseUrl}/#/reveal?q=${token}`;
 }
