@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useSearchParams } from 'react-router-dom';
+import { Gift, Sparkle, Confetti, SmileyXEyes, Lock, X } from '@phosphor-icons/react';
 import { desencriptarAsignacion } from '../utils/crypto';
 import confetti from 'canvas-confetti';
 
@@ -67,7 +68,9 @@ export default function Revelacion() {
           animate={{ opacity: 1, scale: 1 }}
           className="glass rounded-3xl p-8 max-w-md w-full text-center"
         >
-          <div className="text-6xl mb-4">😕</div>
+          <div className="mb-4">
+            <SmileyXEyes size={64} weight="duotone" className="text-gray-400 mx-auto" />
+          </div>
           <h1 className="text-2xl font-bold text-gray-800 mb-2">
             Oops...
           </h1>
@@ -80,7 +83,7 @@ export default function Revelacion() {
   if (!datos) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <div className="text-4xl animate-spin">🎁</div>
+        <Gift size={64} weight="duotone" className="text-emerald-600 animate-spin" />
       </div>
     );
   }
@@ -107,9 +110,9 @@ export default function Revelacion() {
                 repeat: Infinity,
                 repeatDelay: 1
               }}
-              className="text-8xl mb-6 gift-box"
+              className="mb-6 gift-box flex justify-center"
             >
-              🎁
+              <Gift size={96} weight="duotone" className="text-emerald-600" />
             </motion.div>
 
             <h1 className="text-3xl font-bold mb-3 text-gray-800">
@@ -124,9 +127,10 @@ export default function Revelacion() {
               onClick={revelar}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="w-full py-4 bg-gradient-to-r from-emerald-500 via-blue-500 to-purple-600 text-white rounded-xl font-bold text-lg shadow-2xl hover:shadow-emerald-500/50 transition-all"
+              className="w-full py-4 bg-gradient-to-r from-emerald-500 via-blue-500 to-purple-600 text-white rounded-xl font-bold text-lg shadow-2xl hover:shadow-emerald-500/50 transition-all flex items-center justify-center gap-2"
             >
-              ✨ Abrir Regalo
+              <Sparkle size={24} weight="fill" />
+              Abrir Regalo
             </motion.button>
 
             <p className="text-sm text-gray-500 mt-4">
@@ -146,9 +150,9 @@ export default function Revelacion() {
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
               transition={{ delay: 0.3, type: "spring" }}
-              className="text-8xl mb-6"
+              className="mb-6 flex justify-center"
             >
-              🎉
+              <Confetti size={96} weight="duotone" className="text-emerald-600" />
             </motion.div>
 
             <motion.h1
@@ -178,16 +182,20 @@ export default function Revelacion() {
               className="space-y-4"
             >
               <div className="p-4 bg-yellow-50 border border-yellow-200 rounded-xl">
-                <p className="text-sm text-yellow-800">
-                  🤫 <strong>Recuerda:</strong> ¡Es un secreto! No le digas a nadie 
-                  a quién le toca regalarle.
+                <p className="text-sm text-yellow-800 flex items-start gap-2">
+                  <Lock size={20} weight="fill" className="flex-shrink-0 mt-0.5" />
+                  <span>
+                    <strong>Recuerda:</strong> ¡Es un secreto! No le digas a nadie 
+                    a quién le toca regalarle.
+                  </span>
                 </p>
               </div>
 
               <button
                 onClick={() => window.location.href = '/'}
-                className="w-full py-3 bg-gray-200 text-gray-700 rounded-xl font-semibold hover:bg-gray-300 transition-all"
+                className="w-full py-3 bg-gray-200 text-gray-700 rounded-xl font-semibold hover:bg-gray-300 transition-all flex items-center justify-center gap-2"
               >
+                <X size={20} weight="bold" />
                 Cerrar
               </button>
             </motion.div>
