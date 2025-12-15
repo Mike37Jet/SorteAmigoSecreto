@@ -42,7 +42,20 @@ export function desencriptarAsignacion(token) {
 /**
  * Genera el link completo para un participante
  */
-export function generarLink(giverName, receiverName, baseUrl = window.location.origin) {
+export function generarLink(giverName, receiverName, baseUrl = null) {
   const token = encryptarAsignacion(giverName, receiverName);
-  return `${baseUrl}/#/reveal?q=${token}`;
+  
+  // Si no se proporciona baseUrl, construir desde window.location
+  if (!baseUrl) {
+    // En producción, incluye el base path del vite.config.js
+    const origin = window.location.origin;
+    const pathname = window.location.pathname;
+    // Extraer el base path (todo antes del hash)
+    const basePath = pathname.split('#')[0];
+    baseUrl = `${origin}${basePath}`;
+    // Remover trailing slash si existe
+    baseUrl = baseUrl.replace(/\/$/, '');
+  }
+  
+  return `${baseUrl}#/reveal?q=${token}`;
 }
