@@ -193,7 +193,7 @@ export default function Revelacion() {
               </div>
 
               <button
-                onClick={() => navigate('/')}
+                onClick={() => window.close()}
                 className="w-full py-3 bg-gray-200 text-gray-700 rounded-xl font-semibold hover:bg-gray-300 transition-all flex items-center justify-center gap-2"
               >
                 <X size={20} weight="bold" />
