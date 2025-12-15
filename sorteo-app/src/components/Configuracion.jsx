@@ -103,7 +103,7 @@ export default function Configuracion({ onSorteoCompleto }) {
         </p>
 
         {/* Formulario de entrada */}
-        <div className="space-y-4 mb-6">
+        <div className="space-y-3 sm:space-y-4 mb-6">
           <div>
             <input
               type="text"
@@ -111,7 +111,7 @@ export default function Configuracion({ onSorteoCompleto }) {
               value={nombreInput}
               onChange={(e) => setNombreInput(e.target.value)}
               onKeyPress={(e) => e.key === 'Enter' && agregarParticipante()}
-              className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-emerald-500 focus:outline-none transition-colors"
+              className="w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-xl border-2 border-gray-200 focus:border-emerald-500 focus:outline-none transition-colors text-sm sm:text-base"
             />
           </div>
 
@@ -148,14 +148,14 @@ export default function Configuracion({ onSorteoCompleto }) {
             </div>
           )}
 
-          <div className="flex gap-3">
+          <div className="flex gap-2 sm:gap-3">
             <input
               type="text"
               placeholder="Grupo familiar (opcional)"
               value={grupoInput}
               onChange={(e) => setGrupoInput(e.target.value)}
               onKeyPress={(e) => e.key === 'Enter' && agregarParticipante()}
-              className="flex-1 px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-blue-500 focus:outline-none transition-colors"
+              className="flex-1 px-3 sm:px-4 py-2.5 sm:py-3 rounded-xl border-2 border-gray-200 focus:border-blue-500 focus:outline-none transition-colors text-sm sm:text-base"
               list="grupos-sugeridos"
             />
             <datalist id="grupos-sugeridos">
@@ -165,10 +165,10 @@ export default function Configuracion({ onSorteoCompleto }) {
             </datalist>
             <button
               onClick={agregarParticipante}
-              className="px-6 py-3 bg-gradient-to-r from-emerald-500 to-emerald-600 text-white rounded-xl font-semibold hover:from-emerald-600 hover:to-emerald-700 transition-all shadow-lg hover:shadow-xl flex items-center gap-2"
+              className="px-3 sm:px-6 py-2.5 sm:py-3 bg-gradient-to-r from-emerald-500 to-emerald-600 text-white rounded-xl font-semibold hover:from-emerald-600 hover:to-emerald-700 transition-all shadow-lg hover:shadow-xl flex items-center gap-1 sm:gap-2"
             >
               <UserPlus size={20} weight="bold" />
-              Agregar
+              <span className="hidden sm:inline">Agregar</span>
             </button>
           </div>
 
