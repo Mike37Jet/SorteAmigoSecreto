@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Amigo Secreto</title>
+  <script>
+    // Redirigir a la página principal con el hash para que HashRouter maneje la ruta
+    const path = window.location.pathname.slice(1);
+    const query = window.location.search;
+    if (path) {
+      window.location.replace(
+        window.location.origin + 
+        window.location.pathname.split('/').slice(0, -path.split('/').length).join('/') + 
+        '/#/' + path + query
+      );
+    }
+  </script>
+</head>
+<body>
+  <p>Redirigiendo...</p>
+</body>
+</html>
